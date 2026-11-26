@@ -1,0 +1,7 @@
+Metrik,A (Mevcut),B (KYC),İyileşme (%)
+Ortalama bekleme (dk),3.41,0.55,83.78
+P90 bekleme (dk),10.26,2.00,80.54
+Ortalama sistemde kalma (dk),10.89,6.19,43.13
+Günlük yeniden yönlendirme,79.63,35.77,55.09
+Gişe doluluğu (%),82.66,62.71,24.14
+Günlük israf edilen form,79.63,35.77,55.09
