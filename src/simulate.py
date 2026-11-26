@@ -158,9 +158,9 @@ def main():
 
     fig, ax = plt.subplots()
     araliklar = np.histogram_bin_edges(bekleme_a + bekleme_b, bins=30)
-    ax.hist(bekleme_a, bins=araliklar, alpha=0.6, label="A (Mevcut)")
-    ax.hist(bekleme_b, bins=araliklar, alpha=0.6, label="B (KYC)")
-    ax.set(xlabel="Toplam kuyrukta bekleme (dk)", ylabel="Müşteri sayısı")
+    ax.hist(bekleme_a, bins=araliklar, alpha=0.6, label="Baseline (no prediction)")
+    ax.hist(bekleme_b, bins=araliklar, alpha=0.6, label="KYC (visit-reason prediction)")
+    ax.set(xlabel="Total queue wait (min)", ylabel="Customers", title="Simulated branch: waiting time per customer")
     ax.legend()
     fig.savefig(data / "sim_bekleme.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
@@ -169,8 +169,8 @@ def main():
         oranlar = [0.5, 0.6, 0.7, 0.8, 0.9]
         ortalamalar = [ozetle(gunler, p)[0][0] for p in oranlar]
         fig, ax = plt.subplots()
-        ax.plot(oranlar, ortalamalar, marker="o", label="B (KYC)")
-        ax.axhline(mevcut[0], linestyle="--", color="gray", label="A (Mevcut)")
+        ax.plot(oranlar, ortalamalar, marker="o", label="KYC (visit-reason prediction)")
+        ax.axhline(mevcut[0], linestyle="--", color="gray", label="Baseline (no prediction)")
         ax.set(xlabel="Top-1 doğruluğu", ylabel="Ortalama bekleme (dk)", xticks=oranlar)
         ax.legend()
         fig.savefig(data / "sim_duyarlilik.png", dpi=150, bbox_inches="tight")
