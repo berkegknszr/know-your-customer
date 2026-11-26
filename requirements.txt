@@ -1,0 +1,11 @@
+numpy
+pandas
+scikit-learn
+lightgbm
+torch
+streamlit
+simpy
+matplotlib
+deepface
+tf-keras
+opencv-python-headless
